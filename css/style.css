@@ -93,23 +93,12 @@ img {
 }
 .block-header {
   color: var(--dark);
-  font-size: 36px;
+  font-size: 20px;
   font-weight: var(--font-weight-medium);
-  line-height: 1.11;
+  line-height: 1.2;
   margin-bottom: 8px;
   letter-spacing: 0.02em;
   text-align: center;
-}
-@media only screen and (min-width: 768px) {
-  .block-header {
-    text-align: start;
-  }
-}
-@media only screen and (min-width: 1158px) {
-  .block-header {
-  font-size: 20px;
-  line-height: 1.2;
-  }
 }
 /* END General styles */
 
@@ -325,6 +314,17 @@ img {
     max-width: 356px;
   }
 }
+@media only screen and (max-width: 1157.98px) {
+  .principles-card .block-header {
+    font-size: 36px;
+    line-height: 1.11;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .principles-card .block-header {
+    text-align: start;
+  }
+}
 .principles-icon-wrapper {
   display: none;
 }
@@ -348,7 +348,24 @@ img {
 }
 .team-cards-grid {
   display: flex;
-  gap: 24px;
+  flex-direction: column;
+  align-items: center;
+  gap: 72px;
+}
+@media only screen and (min-width: 768px) {
+  .team-cards-grid {
+    flex-direction: row;
+    flex-wrap: wrap;
+    column-gap: 24px;
+    row-gap: 72px;
+    max-width: 552px;
+    margin: 0 auto;
+  }
+}
+@media only screen and (min-width: 1158px) {
+  .team-cards-grid {
+    max-width: unset;
+  }
 }
 .team-card {
   background-color: var(--white);
@@ -356,6 +373,7 @@ img {
   border-radius: 0 0 4px 4px;
   box-shadow: 0px 2px 1px 0px #2e2f4214, 0px 1px 1px 0px #2e2f4229,
     0px 1px 6px 0px #2e2f4214;
+  max-width: 264px;
 }
 .team-card-content {
   padding: 32px 0;
