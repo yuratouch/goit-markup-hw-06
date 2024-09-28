@@ -53,12 +53,22 @@ img {
   max-width: 100%;
 }
 .container {
-  max-width: 1158px;
   margin: 0 auto;
-  padding: 0 15px;
+  padding: 0 16px;
+}
+@media only screen and (min-width: 1158px) {
+  .container {
+    max-width: 1158px;
+    padding: 0 15px;
+  }
 }
 .section {
-  padding: 120px 0;
+  padding: 96px 0;
+}
+@media only screen and (min-width: 1158px) {
+  .section {
+    padding: 120px 0;
+  }
 }
 .visually-hidden {
   position: absolute;
@@ -83,11 +93,23 @@ img {
 }
 .block-header {
   color: var(--dark);
-  font-size: 20px;
+  font-size: 36px;
   font-weight: var(--font-weight-medium);
-  line-height: 1.2;
+  line-height: 1.11;
   margin-bottom: 8px;
   letter-spacing: 0.02em;
+  text-align: center;
+}
+@media only screen and (min-width: 768px) {
+  .block-header {
+    text-align: start;
+  }
+}
+@media only screen and (min-width: 1158px) {
+  .block-header {
+  font-size: 20px;
+  line-height: 1.2;
+  }
 }
 /* END General styles */
 
@@ -241,12 +263,13 @@ img {
   color: var(--white);
   font-size: 36px;
   letter-spacing: 0.02em;
-  line-height: 1.07;
+  line-height: 1.11;
   margin-bottom: 72px;
 }
 @media only screen and (min-width: 768px) {
   .hero-heading {
     font-size: 56px;
+    line-height: 1.07;
     margin-bottom: 32px;
     max-width: 496px;
   }
@@ -281,20 +304,41 @@ img {
 /* START Principles section styles */
 .principles-cards-grid {
   display: flex;
-  gap: 24px;
+  flex-direction: column;
+  align-items: center;
+  gap: 72px;
+}
+@media only screen and (min-width: 768px) {
+  .principles-cards-grid {
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    column-gap: 24px;
+    row-gap: 72px;
+  }
 }
 .principles-card {
   max-width: 264px;
 }
+@media only screen and (min-width: 768px) and (max-width: 1157.98px) {
+  .principles-card {
+    max-width: 356px;
+  }
+}
 .principles-icon-wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 112px;
-  background-color: var(--light);
-  border: 1px solid var(--subtle-text);
-  border-radius: 4px;
-  margin-bottom: 8px;
+  display: none;
+}
+@media only screen and (min-width: 1158px) {
+  .principles-icon-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 112px;
+    background-color: var(--light);
+    border: 1px solid var(--subtle-text);
+    border-radius: 4px;
+    margin-bottom: 8px;
+  }
 }
 /* END Principles section styles */
 
