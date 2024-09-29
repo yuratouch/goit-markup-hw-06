@@ -124,7 +124,12 @@ img {
   margin-right: 76px;
 }
 .main-navigation-list {
-  display: flex;
+  display: none;
+}
+@media only screen and (min-width: 768px) {
+  .main-navigation-list {
+    display: flex;
+  }
 }
 .main-navigation-list li:not(:last-child) {
   margin-right: 40px;
@@ -155,28 +160,70 @@ img {
 .nav-link:hover::after {
   display: block;
 }
+.header-menu-btn {
+  display: flex;
+  align-items: center;
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  margin-left: auto;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+@media only screen and (min-width: 768px) {
+  .header-menu-btn {
+    display: none;
+  }
+}
 .nav-contacts {
+  display: none;
   font-style: normal;
+}
+@media only screen and (min-width: 768px) {
+  .nav-contacts {
+    display: flex;
+    align-items: center;
+  }
 }
 .nav-contacts-list {
   display: flex;
   align-items: center;
+  flex-direction: column;
+  gap: 12px;
 }
-.nav-contacts-list li:not(:last-child) {
-  margin-right: 40px;
+@media only screen and (min-width: 1158px) {
+  .nav-contacts-list {
+    flex-direction: row;
+  }
+}
+@media only screen and (min-width: 1158px) {
+  .nav-contacts-list li:not(:last-child) {
+    margin-right: 40px;
+  }
 }
 .contact-link {
-  color: var(--text);
   display: block;
-  padding: 24px 0;
+  color: var(--text);
+  font-size: 12px;
+  padding: 0;
   transition: color var(--transition-default);
+}
+@media only screen and (min-width: 1158px) {
+  .contact-link {
+    font-size: 16px;
+    padding: 24px 0;
+  }
 }
 .nav-link:hover,
 .nav-link:active,
 .nav-link:focus,
 .contact-link:hover,
 .contact-link:active,
-.contact-link:focus {
+.contact-link:focus,
+.header-menu-link:hover,
+.header-menu-link:active,
+.header-menu-link:focus {
   color: var(--pressed);
 }
 .logo {
@@ -187,12 +234,59 @@ img {
   line-height: 1.17;
   letter-spacing: 0.03em;
   text-transform: uppercase;
+  padding: 16px 0;
+}
+@media only screen and (min-width: 768px) {
+  .logo {
+    padding: 0;
+  }
 }
 .logo .dark {
   color: var(--dark);
 }
 .logo .light {
   color: var(--light);
+}
+.header-menu-wrapper {
+  display: flex;
+    flex-direction: column;
+  background-color: var(--white);
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 72px 16px 40px;
+  width: 100dvw;
+  height: 100dvh;
+  transition: opacity var(--transition-default),
+    visibility var(--transition-default);
+}
+.header-menu-list {
+  margin-bottom: auto;
+}
+.header-menu-list li:not(:last-child) {
+  margin-bottom: 40px;
+}
+.header-menu-link {
+  color: var(--text);
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 1.11;
+}
+.header-menu-wrapper .team-card-icons {
+  gap: 40px;
+}
+.header-menu-contacts {
+  font-style: normal;
+}
+.header-menu-contacts-list .contact-link {
+  font-size: 20px;
+  line-height: 1.2;
+}
+.header-menu-contacts-list {
+  margin-bottom: 48px;
+}
+.header-menu-contacts-list li:not(:last-child) {
+  margin-bottom: 24px;
 }
 /* END Header styles */
 
@@ -258,6 +352,7 @@ img {
   letter-spacing: 0.02em;
   line-height: 1.11;
   margin-bottom: 72px;
+  max-width: 345px;
 }
 @media only screen and (min-width: 768px) {
   .hero-heading {
@@ -663,14 +758,20 @@ img {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 408px;
+  width: 288px;
   min-height: 584px;
-  padding: 72px 24px 24px 24px;
+  padding: 72px 16px 24px;
   background-color: var(--modal-bg);
   box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 1px 3px 0 rgba(0, 0, 0, 0.12),
     0 2px 1px 0 rgba(0, 0, 0, 0.2);
   border-radius: 4px;
   transition: transform var(--transition-default);
+}
+@media only screen and (min-width: 768px) {
+  .modal-user-contacts {
+    width: 408px;
+    padding: 72px 24px 24px 24px;
+  }
 }
 .modal-close-btn {
   display: flex;
@@ -704,11 +805,13 @@ img {
 .modal-close-btn:focus .modal-svg {
   fill: var(--white);
 }
+.header-menu-wrapper.is-open,
 .modal-overlay.is-open {
   opacity: 1;
   visibility: visible;
   pointer-events: auto;
 }
+.header-menu-wrapper:not(.is-open),
 .modal-overlay:not(.is-open) .modal {
   transform: translate(-50%, -150%);
 }
@@ -780,6 +883,9 @@ textarea::placeholder {
   margin-bottom: 24px;
 }
 .policy-wrapper .modal-lable {
+  display: flex;
+  align-items: center;
+  gap: 8px;
   margin-bottom: 0;
 }
 .policy-link {
@@ -794,7 +900,7 @@ textarea::placeholder {
   align-items: center;
   height: 16px;
   width: 16px;
-  margin-right: 8px;
+  min-width: 16px;
   border-radius: 2px;
   border: 1px solid rgba(46, 47, 66, 0.4);
   fill: transparent;

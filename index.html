@@ -20,12 +20,17 @@
     <title>Web Studio</title>
   </head>
   <body>
-    <header class="header" hidden>
+    <header class="header">
       <div class="container">
         <nav class="main-navigation">
           <a class="logo" href="./index.html"
             >Web<span class="dark">Studio</span></a
           >
+          <button class="header-menu-btn" type="button" data-menu-open>
+            <svg class="header-menu-icon" width="16.8" height="14.4">
+              <use href="./images/icons.svg#burger"></use>
+            </svg>
+          </button>
           <ul class="main-navigation-list">
             <li>
               <a class="nav-link active" href="./index.html">Studio</a>
@@ -52,6 +57,68 @@
             </li>
           </ul>
         </address>
+      </div>
+      <div class="header-menu-wrapper" data-menu>
+        <button class="modal-close-btn" type="button" data-menu-close>
+          <svg class="modal-close-icon" width="8" height="8">
+            <use href="./images/icons.svg#close"></use>
+          </svg>
+        </button>
+        <ul class="header-menu-list">
+          <li>
+            <a class="header-menu-link" href="">Studio</a>
+          </li>
+          <li>
+            <a class="header-menu-link" href="">Portfolio</a>
+          </li>
+          <li>
+            <a class="header-menu-link" href="">Contacts</a>
+          </li>
+        </ul>
+        <address class="header-menu-contacts">
+          <ul class="header-menu-contacts-list">
+            <li>
+              <a class="contact-link" href="mailto:info@devstudio.com"
+                >info@devstudio.com</a
+              >
+            </li>
+            <li>
+              <a class="contact-link" href="tel:+110001111111"
+                >+11 (000) 111-11-11</a
+              >
+            </li>
+          </ul>
+        </address>
+        <ul class="team-card-icons">
+          <li class="team-card-icon-wrapper">
+            <a href="" class="icon-link">
+              <svg class="team-card-icon" width="16" height="16">
+                <use href="./images/icons.svg#instagram"></use>
+              </svg>
+            </a>
+          </li>
+          <li class="team-card-icon-wrapper">
+            <a href="" class="icon-link">
+              <svg class="team-card-icon" width="16" height="16">
+                <use href="./images/icons.svg#twitter"></use>
+              </svg>
+            </a>
+          </li>
+          <li class="team-card-icon-wrapper">
+            <a href="" class="icon-link">
+              <svg class="team-card-icon" width="16" height="16">
+                <use href="./images/icons.svg#facebook"></use>
+              </svg>
+            </a>
+          </li>
+          <li class="team-card-icon-wrapper">
+            <a href="" class="icon-link">
+              <svg class="team-card-icon" width="16" height="16">
+                <use href="./images/icons.svg#linkedin"></use>
+              </svg>
+            </a>
+          </li>
+        </ul>
       </div>
     </header>
     <main>
@@ -584,9 +651,12 @@
               <span class="checkbox-visible">
                 <svg class="checkbox-custom-icon" width="10" height="8">
                   <use href="./images/icons.svg#done"></use>
-                </svg> </span
-              >I accept the terms and conditions of the
-              <a class="policy-link" href="">Privacy Policy</a>
+                </svg>
+              </span>
+              <span>
+                I accept the terms and conditions of the
+                <a class="policy-link" href="">Privacy Policy</a>
+              </span>
             </label>
           </div>
 
@@ -595,5 +665,6 @@
       </div>
     </div>
     <script src="./js/modal.js"></script>
+    <script src="./js/nav-menu.js"></script>
   </body>
 </html>
